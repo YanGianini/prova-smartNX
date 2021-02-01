@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alterar Cliente</h1>
+    <div>
+        <form action="{{ url_for('alterar_dados', cliente_nome=cliente_nome) }}" method="POST">
+            <fieldset>
+            <div class="form-group">
+                <label for="codigo">Codigo</label>
+                <input type="text" id="codigo" name="codigo" class="form-control" value='{{ cliente.codigo }}'>
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control" value='{{ cliente.nome }}'>
+            </div>
+            <div class="form-group">
+                <label for="razao_social">Razão Social</label>
+                <input type="text" id="razao_social" name="razao_social" class="form-control" value='{{ cliente.razao_social }}'>
+            </div>
+            <div class="form-group">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" id="cnpj" name="cnpj" class="form-control" value='{{ cliente.cnpj }}'>
+            </div>
+            <div class="form-group">
+                <label for="data_inclusao">Data de inclusão</label>
+                <input type="text" id="data_inclusao" name="data_inclusao" class="form-control" value='{{ cliente.data_inclusao }}'>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+        </fieldset>
+      </form>
+    </div>
+
+</body>
+</html>
